@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router, NavigationEnd } from '@angular/router';
 import { take, filter } from 'rxjs/operators';
 //
+import { DOCUMENT } from '@angular/common';
+//
 import { Character } from '@shared/componets/interface/character.interface';
 import { CharacterService } from '@shared/services/character.service';
+import { inject } from '@angular/core/testing';
 //
 type RequestInfo = {
   next: string;
@@ -24,8 +27,12 @@ export class CharacterListComponent implements OnInit {
   private query: string;
   private hideScrollHeight: 200;
   private showScrollHeight: 500;
+  showGoUp = false;
 
-  constructor(private charService: CharacterService,
+
+  constructor(
+            @Inject(DOCUMENT) private document: Document,
+              private charService: CharacterService,
               private route: ActivatedRoute,
               private router: Router) {
     this.onUrlChanged();
@@ -34,6 +41,35 @@ export class CharacterListComponent implements OnInit {
   ngOnInit(): void {
     // this.getDataFromService();
     this.getCharactersByQuery();
+  }
+
+  //escucha un evento del DOM
+  //cunado sucede el evento ejecuta el metodo
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    const yOffSet = window.pageYOffset;
+    if( (yOffSet ||
+        this.document.documentElement.scrollTop ||
+        this.document.body.scrollTop) > this.showScrollHeight) {
+          this.showGoUp = true;
+      }
+    else if(this.showGoUp && (yOffSet || this.document.documentElement.scrollTop ||
+          this.document.body.scrollTop ) < this.hideScrollHeight){
+              this.showGoUp = false;
+    }
+  }
+  //
+  onScrollDown() {
+      if(this.info.next) {
+        this.pageNum++;
+        this.getDataFromService();
+      }
+  }
+
+  // al tope te la pagina uo
+  onScrollTop(): void {
+    this.document.body.scrollTop = 0; // safari
+    this.document.documentElement.scrollTop = 0; // all browser
   }
 
 

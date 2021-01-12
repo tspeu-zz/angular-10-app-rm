@@ -39,6 +39,12 @@ ng g m components/pages/characters/character-details -m=app --route character-de
 ng g s
  
 
+//
+ngx-infinite-scroll
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
+
+##
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
 

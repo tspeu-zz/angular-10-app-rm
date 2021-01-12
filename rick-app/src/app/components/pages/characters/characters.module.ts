@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 //
 // import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { CharacterDetailsComponent } from '@characters/character-details/character-details.component';
@@ -17,7 +18,8 @@ const charComponent = [
   declarations: [...charComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    InfiniteScrollModule
   ],
   exports :[...charComponent]
 })
