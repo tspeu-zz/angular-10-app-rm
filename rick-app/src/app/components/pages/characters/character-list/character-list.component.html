@@ -2,25 +2,7 @@
   <div class="col-xs-12 col-sm-6 col-md-4"
     *ngFor="let character of characters">
     <!-- all characters -->
-    <div class="card">
-      <div class="image">
-        <a [routerLink]="['/character-details', character.id]">
-          <img
-          [src]="character.image"
-          [alt]="character.name"
-          class="card-img-top">
-        </a>
-      </div>
-      <div class="card-inner">
-        <div class="header">
-          <a [routerLink]="['/character-detail', character.id]">
-            <h2>{{character.name | slice: 0:15}}</h2>
-            <h4 class="text-muted"> {{character.gender}}</h4>
-            <small class="text-muted">{{character.created | date}}</small>
-          </a>
-        </div>
-      </div>
-    </div>
+    <app-character [character]="character"></app-character>
 
     <!-- all characters -->
   </div>
