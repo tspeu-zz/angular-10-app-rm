@@ -35,7 +35,8 @@ ng g m components/pages/characters/character-list -m=app --route character-list
 --details
 ng g m components/pages/characters/character-details -m=app --route character-details
 
-
+//
+ng g s
  
 
 
