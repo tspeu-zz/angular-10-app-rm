@@ -1,1 +1,28 @@
-<p>character-details works!</p>
+<div class="row justify-content-lg-center mt-3" *ngIf="character$ | async as character">
+  <div class="justify-content-center col-xs-12 col-sm-6 col-md-6">
+    <!-- all characters -->
+    <div class="card">
+      <div class="image">
+          <img
+            [src]="character.image"
+            [alt]="character.name"
+            class="card-img-top">
+      </div>
+      <div class="card-inner">
+        <div class="header">
+          <a [routerLink]="['/character-detail', character.id]">
+            <h2>{{character.name | slice: 0:15}}</h2>
+            <h4 class="text-muted"> {{character.gender}}</h4>
+            <small class="text-muted">{{character.created | date}}</small>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<p>
+<button class="btn btn-success btn-lg m-3" (click)="onGoBack()"> Go Back</button>
+</p>

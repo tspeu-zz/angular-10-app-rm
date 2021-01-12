@@ -4,7 +4,7 @@
     <!-- all characters -->
     <div class="card">
       <div class="image">
-        <a [routerLink]="['/character-detail', character.id]">
+        <a [routerLink]="['/character-details', character.id]">
           <img
           [src]="character.image"
           [alt]="character.name"
@@ -25,11 +25,12 @@
     <!-- all characters -->
   </div>
 </div>
+
 <div class="col-xs-12 col-sm-12 col-md-12 mt-5 container-not-found"
 *ngIf="characters.length <= 0">
-  <!-- all characters -->
   <p> No hay resultados.....!</p>
 </div>
-<p>
-<button class="btn btn-dark my-3"> Go up</button>
-</p>
+
+  <p>
+    <button class="btn btn-dark my-3"> Go up</button>
+  </p>
