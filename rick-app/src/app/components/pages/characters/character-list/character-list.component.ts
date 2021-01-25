@@ -30,8 +30,7 @@ export class CharacterListComponent implements OnInit {
   showGoUp = false;
 
 
-  constructor(
-            @Inject(DOCUMENT) private document: Document,
+  constructor(@Inject(DOCUMENT) private document: Document,
               private charService: CharacterService,
               private route: ActivatedRoute,
               private router: Router) {
@@ -48,14 +47,13 @@ export class CharacterListComponent implements OnInit {
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
     const yOffSet = window.pageYOffset;
-    if( (yOffSet ||
-        this.document.documentElement.scrollTop ||
+    if( (yOffSet || this.document.documentElement.scrollTop ||
         this.document.body.scrollTop) > this.showScrollHeight) {
-          this.showGoUp = true;
-      }
-    else if(this.showGoUp && (yOffSet || this.document.documentElement.scrollTop ||
-          this.document.body.scrollTop ) < this.hideScrollHeight){
-              this.showGoUp = false;
+      this.showGoUp = true;
+    } else if(this.showGoUp && (yOffSet ||
+              this.document.documentElement.scrollTop ||
+              this.document.body.scrollTop ) < this.hideScrollHeight) {
+      this.showGoUp = false;
     }
   }
   //
@@ -102,16 +100,16 @@ export class CharacterListComponent implements OnInit {
     this.charService
       .searchCharacters(this.query, this.pageNum)
       .pipe(take(1))
-        .subscribe( (res:any) =>{
+      .subscribe( (res:any) =>{
         console.log('res ->', res);
 
-          if(res?.results?.length){
-            const {info, results} = res;
-            this.characters = [...this.characters, ...results]
-            this.info = info;
-          } else {
-            this.characters = [];
-          }
+        if(res?.results?.length){
+          const {info, results} = res;
+          this.characters = [...this.characters, ...results]
+          this.info = info;
+        } else {
+          this.characters = [];
+        }
       });
   }
 

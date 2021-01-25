@@ -5,13 +5,13 @@ import { Character } from '@shared/componets/interface/character.interface';
 import { environment } from '@environments/environment';
 
 
-@Injectable({
-  providedIn: 'root'
-})
-
 // https://rickandmortyapi.com/api/character
 // https://rickandmortyapi.com/api/character/?name=rick&status=alive
 // https://rickandmortyapi.com/api/character/2
+
+@Injectable({
+  providedIn: 'root'
+})
 export class CharacterService {
 
   constructor(private http: HttpClient) { }
@@ -28,5 +28,5 @@ export class CharacterService {
     return this.http.get<Character>(`${environment.baseUrlAPI}character/${id}`);
   }
 
-  
+
 }
