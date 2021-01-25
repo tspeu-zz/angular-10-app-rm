@@ -10,14 +10,15 @@ import {  Receta} from './receta.model';
 })
 export class RecetasPage implements OnInit {
 
-  recetas: Receta[] = [];
- 
+  recetas: Receta[] ;
+
 
   constructor(private recetaServ: RecetaService) { }
 
   ngOnInit() {
     this.recetas = this.recetaServ.getAllRecetas();
+    console.log(this.recetas);
   }
 
- 
+
 }

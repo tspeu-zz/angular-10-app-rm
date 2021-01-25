@@ -1,0 +1,7 @@
+<ion-item 
+[routerLink]="['/recetas', receta.id]">
+  <ion-avatar slot="start">
+    <ion-img [src]="receta.imageUrl"></ion-img>
+  </ion-avatar>
+  <ion-label>{{receta.title}}</ion-label>
+</ion-item>
