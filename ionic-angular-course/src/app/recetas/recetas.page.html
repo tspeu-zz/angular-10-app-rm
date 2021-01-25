@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>recetas App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list  class="ion-margin-top">
+    <ion-item *ngFor="let r of recetas"
+      [routerLink]="['/recetas', r.id]">
+      <ion-avatar slot="start">
+        <ion-img [src]="r.imageUrl"></ion-img>
+      </ion-avatar>
+      <ion-label>{{r.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
