@@ -71,3 +71,7 @@ ionic/angular makes usae in Angular easier/more efficient
       IonViewDidLeave->
 
    ngOnDestroy->cuando se sale del componente
+   
+*
+tabs navigation->
+separadas navigation stack por cada tab
