@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
@@ -10,7 +10,7 @@ import { Receta } from '../receta.model';
   templateUrl: './detalle.page.html',
   styleUrls: ['./detalle.page.scss'],
 })
-export class DetallePage implements OnInit {
+export class DetallePage implements OnInit, OnDestroy {
 
   receta: Receta;
   
@@ -18,6 +18,10 @@ export class DetallePage implements OnInit {
               private recetaServ: RecetaService,
               private router: Router,
               public alertController: AlertController) { }
+  
+  ngOnDestroy(): void {
+      console.log('DESTROY  DETALLE');
+  }
 
   ngOnInit() {
     //get url params

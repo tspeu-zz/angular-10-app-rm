@@ -38,3 +38,36 @@ ionic/angular makes usae in Angular easier/more efficient
 
    al añadir un angulkar component, que no es un ionic page.
    se debe importar en el modulo que se va a utilizar , solo en ese modulo.
+
+   ionic capacitor add android
+   ng build
+   npx cap open android
+
+   ionic capacitor copy android
+   ionic capacitor run android -l ->without ng build
+
+   capacitor.config.json
+#"appId": "com.jm.ionic.angular.course",
+
+   @android studio->create emulator->
+
+   ROUTER-> navigations
+   angular router->
+   ionic stack of pages-> ions SctackController.
+
+   Ionic NavController para interacuar con el stack of pages. 
+   Ionoc cache pages*>
+   bug al borrar un recipe.
+   Ionic Pages life cicle
+   ngOnInit->
+
+               ionic Pages
+      ionViewWillEnter -> *despues de ngOnInit cuando  la page es visible->
+                           *se ejecuta justo despues que el contenido de la page se ha cargado y se muestra
+      IonViewDidEnter-> se ejecuta justo despues. cuando la page es visible
+*por eso no se destruye , poque esta en el stack de las pages.
+
+      IonViewWillLeave->para limpiar, cuando la pagina es invisible y hay otra page en el top del         stack
+      IonViewDidLeave->
+
+   ngOnDestroy->cuando se sale del componente
