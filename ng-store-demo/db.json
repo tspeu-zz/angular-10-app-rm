@@ -1,0 +1,37 @@
+{
+  "shopping": [
+    {
+      "id": 1,
+      "name": "cocaXola"
+    },
+    {
+      "id": "f39127db-b361-4bd9-bae7-27879489a704",
+      "name": "pepeloca"
+    },
+    {
+      "id": "eea02532-ba8f-4e83-8a76-c90fd27c6577",
+      "name": "apo"
+    },
+    {
+      "id": "02a6327f-f55b-4a27-b812-4fae07d01614",
+      "name": "pepe"
+    },
+    {
+      "id": "f7df7408-ce6a-40f7-8c38-999a9ec5955c",
+      "name": "tertert"
+    }
+  ],
+  "sessions": [
+    { "name": "pepe@mail",
+      "token": "124555545254-555",
+      "isLogged": false
+    }
+  ],
+  "products": [
+    { "id": 1},
+    { "id": 2},
+    { "id": 3},
+    { "id": 4}
+  ]
+
+}

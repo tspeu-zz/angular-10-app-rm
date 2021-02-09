@@ -15,8 +15,13 @@ export class DiscoverPage implements OnInit {
   places: IPlace[];
 
   ngOnInit() {
+    console.log('ON INIT');
     this.places = this.placesServ.places;
-    console.log('ON INIT',this.places);
+  }
+  
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter-> ',this.places);
+    
   }
 
 

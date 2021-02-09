@@ -75,3 +75,10 @@ ionic/angular makes usae in Angular easier/more efficient
 *
 tabs navigation->
 separadas navigation stack por cada tab
+
+router link in view
+ [routerLink]="['/', 'places', 'tabs','discover', place.id ]" >
+ -> /places/tabs/discover/t1.
+
+ routerDirection=> ionic feture-> un hint para la navegacion va para adeleante o detrar
+ foward or backward

@@ -6,7 +6,7 @@ import { DOCUMENT } from '@angular/common';
 //
 import { Character } from '@shared/componets/interface/character.interface';
 import { CharacterService } from '@shared/services/character.service';
-import { inject } from '@angular/core/testing';
+// import { inject } from '@angular/core/testing';
 //
 type RequestInfo = {
   next: string;
@@ -43,7 +43,7 @@ export class CharacterListComponent implements OnInit {
   }
 
   //escucha un evento del DOM
-  //cunado sucede el evento ejecuta el metodo
+  //cuando sucede el evento ejecuta el metodo
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
     const yOffSet = window.pageYOffset;

@@ -1,0 +1,16 @@
+<p>post-card works!</p>
+<div *ngIf="name; else noName">
+  <label for="name">The Name is</label>
+  <h1 style="color: blue"> {{postInput.name}}</h1>
+</div>
+<ng-template #noName style="color: red;"> No Hay NOMBRE</ng-template>
+<hr>
+<div *ngIf="name; else noContent">
+  <label for="name">The Content is</label>
+  <h2 style="color: green"> {{postInput.content}}</h2>
+</div>
+<ng-template #noContent style="color: red;"> No Hay Content!</ng-template>
+<hr>
+<div>
+  <button (click)="onPostData()"> Mostrar Datos</button>
+</div>

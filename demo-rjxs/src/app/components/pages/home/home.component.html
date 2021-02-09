@@ -1,0 +1,40 @@
+<h1>PostComponent</h1>
+<post-app>
+    <h3 #contentPost>post-app es este</h3>
+</post-app>
+<hr>
+<!--  -->
+<h1>Person</h1>
+<div *ngFor=" let d of data; let i = index">
+  <hr>( {{i}})
+  <lib-my-test-lib [data-input]= "d" #liber></lib-my-test-lib>
+  <hr>
+</div>
+
+<lib-post-card
+[post-data]="{name: post.name, content: post.content}"
+(postData)="onShowPost($event)"></lib-post-card>
+
+
+
+<button (click)="stop()">stop</button>
+<!-- <h2>{{ person$ | async }}</h2> -->
+<!-- <h2>{{ hombre | async }}</h2> -->
+<!-- <p> {{ person$.age | async}}</p> -->
+
+
+<ul id="output"><li>INICIO</li></ul>
+
+<div *ngIf= "dataPostes$  | async as postComm">
+  <div *ngFor=' let pc of postComm'>
+    <p> {{pc.id}} </p>
+    <h2> </h2>
+   </div>
+</div>
+
+<div *ngIf = "_postA$ | async as postis">
+    <div *ngFor=' let p of postis'>
+     <p>  {{ p.id}}: {{p.title}}</p>
+     <h2> {{p.body}}</h2>
+    </div>
+</div>

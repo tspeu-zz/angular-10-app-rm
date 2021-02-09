@@ -5,6 +5,8 @@
 		}
 	],
 	"settings": {
-		"files.autoSave": "afterDelay"
+		"files.autoSave": "afterDelay",
+		"php.validate.enable": false,
+		"php.suggest.basic": false
 	}
 }
